@@ -1,493 +1,737 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RealEstateX | The AI-Powered OS for Giga-Projects, Societies & REITs</title>
-    <meta name="description" content="The world's first AI-driven Real Estate Management System. Tailored for GCC Vision 2030, Asian Housing Societies, and Global Institutional REITs.">
+    <title>Real Estate Society Management Software in Pakistan | RealEstateX by Hashverx</title>
+    <meta name="description" content="AI-powered real estate software for society management, installment tracking, dealer commissions, balloting, and property file management. Secure cloud & on-premise available.">
 
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="ZATCA Phase 2, Real Estate ERP, Giga-projects KSA, Housing Society Software, REIT Management AI, Property Management System">
-
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         :root {
-            --primary-gcc: #d4af37; /* Gold */
-            --secondary-gcc: #064e3b; /* Emerald */
-            --primary-asia: #1e3a8a; /* Navy */
-            --secondary-asia: #64748b; /* Silver */
-            --primary-global: #0d9488; /* Teal */
-            --secondary-global: #334155; /* Slate */
+            /* Multi-Shade Blue Palette */
+            --navy-dark: #0f172a;        /* Foundations */
+            --indigo-deep: #1e1b4b;      /* Headings */
+            --azure-primary: #2563eb;    /* Primary Action */
+            --sky-accent: #38bdf8;       /* Highlights */
+            --periwinkle-soft: #eef2ff;  /* Background Tints */
+            --slate-text: #475569;       /* Body Text */
 
-            --active-primary: var(--primary-gcc);
-            --active-secondary: var(--secondary-gcc);
-            transition: all 0.3s ease;
+            --grad-premium: linear-gradient(135deg, #1e1b4b 0%, #2563eb 100%);
+            --grad-icon: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 50px -12px rgba(15, 23, 42, 0.1);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: #1a1a1a;
+            color: var(--navy-dark);
+            background-color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* Region Switcher Styling */
-        .region-toggle {
-            background: #f8fafc;
-            border-radius: 50px;
-            padding: 5px;
-            display: inline-flex;
-            border: 1px solid #e2e8f0;
+        h1, h2, h3, .font-poppins { font-family: 'Poppins', sans-serif; }
+
+        /* --- Typography & Aesthetic Accents --- */
+        .text-gradient {
+            background: linear-gradient(to right, var(--indigo-deep), var(--azure-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
         }
 
-        .btn-region {
-            border: none;
-            background: transparent;
-            padding: 8px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        .btn-region.active {
-            background: white;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            color: var(--active-primary);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            padding: 100px 0 80px;
-            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.05), transparent);
-        }
-
-        .badge-vision {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--active-primary);
-            padding: 8px 16px;
+        .section-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--periwinkle-soft);
+            color: var(--azure-primary);
             border-radius: 100px;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.75rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
             margin-bottom: 1.5rem;
         }
 
-        /* AI Agent Grid */
-        .agent-card {
+        /* --- Premium Buttons --- */
+        .btn-premium {
+            background: var(--grad-premium);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 10px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+        }
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.5);
+            color: white;
+        }
+
+        .btn-outline-glass {
+            background: white;
+            border: 2px solid var(--periwinkle-soft);
+            color: var(--indigo-deep);
+            padding: 16px 36px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-outline-glass:hover {
+            border-color: var(--azure-primary);
+            background: var(--periwinkle-soft);
+        }
+
+        /* --- Hero Section --- */
+        .hero-area {
+            padding: 140px 0 100px;
+            background: radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.08), transparent),
+                        radial-gradient(circle at 10% 90%, rgba(37, 99, 235, 0.05), transparent);
+        }
+
+        .pain-list { list-style: none; padding: 0; }
+        .pain-list li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: var(--slate-text);
+            display: flex;
+            align-items: center;
+        }
+        .pain-list i { color: #f43f5e; margin-right: 15px; font-size: 1.2rem; }
+
+        .mockup-container {
+            position: relative;
+            background: white;
+            border-radius: 30px;
+            padding: 15px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .float-badge {
+            position: absolute;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--azure-primary);
+            border: 1px solid var(--periwinkle-soft);
+            animation: floating 4s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+
+        /* --- AI Agents Card Aesthetics --- */
+        .ai-card {
             background: white;
             border: 1px solid #f1f5f9;
-            border-radius: 16px;
-            padding: 24px;
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s ease;
             height: 100%;
-            transition: 0.3s;
             position: relative;
             overflow: hidden;
         }
+        .ai-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--grad-premium);
+            opacity: 0; transition: 0.3s;
+        }
+        .ai-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .ai-card:hover::before { opacity: 1; }
 
-        .agent-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--active-primary);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05);
+        .ai-icon-wrapper {
+            width: 70px; height: 70px;
+            background: var(--grad-icon);
+            color: var(--azure-primary);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 20px; font-size: 2rem; margin-bottom: 30px;
         }
 
-        .agent-icon {
-            width: 48px;
-            height: 48px;
+        .ai-command {
             background: #f8fafc;
             border-radius: 12px;
+            padding: 15px;
+            margin-top: 25px;
+            border-left: 4px solid var(--sky-accent);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #0369a1;
+            font-weight: 600;
+        }
+
+        /* --- Feature Menu Aesthetics --- */
+        .feature-box {
+            background: white;
+            border-radius: 32px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            min-height: 600px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-sidebar {
+            width: 350px;
+            background: #f8fafc;
+            border-right: 1px solid #e2e8f0;
+            padding: 40px 0;
+        }
+
+        .feature-link {
+            padding: 15px 40px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--slate-text);
+            transition: 0.3s;
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: var(--active-primary);
+            justify-content: space-between;
+        }
+        .feature-link:hover { color: var(--azure-primary); background: white; }
+        .feature-link.active {
+            background: white;
+            color: var(--azure-primary);
+            box-shadow: -5px 0 0 0 var(--azure-primary) inset;
         }
 
-        /* Feature Explorer */
-        .feature-menu-item {
-            padding: 1.5rem;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: 0.3s;
-            border-left: 4px solid transparent;
-        }
+        .feature-content-area { padding: 60px; flex-grow: 1; }
 
-        .feature-menu-item.active {
-            background: #f8fafc;
-            border-left-color: var(--active-primary);
+        /* --- Comparison Table --- */
+        .table-premium {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #e2e8f0;
         }
-
-        /* Counters */
-        .counter-box {
+        .table-premium thead th {
+            background: var(--navy-dark);
+            color: white;
+            padding: 25px;
             text-align: center;
-            padding: 2rem;
-        }
-
-        .counter-val {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--active-primary);
-            display: block;
-        }
-
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 80px 0 40px;
-        }
-
-        .cta-primary {
-            background: var(--active-primary);
-            color: white;
             border: none;
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 600;
+        }
+        .table-premium td { padding: 20px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* --- FAQ Fix & Aesthetics --- */
+        .faq-wrapper { max-width: 850px; margin: 0 auto; }
+        .faq-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            background: white;
             transition: 0.3s;
         }
-
-        .cta-primary:hover {
-            filter: brightness(1.1);
-            color: white;
+        .faq-header {
+            width: 100%;
+            padding: 25px 30px;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--indigo-deep);
+            text-align: left;
+            cursor: pointer;
         }
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease;
+            padding: 0 30px;
+            color: var(--slate-text);
+            line-height: 1.8;
+        }
+        .faq-card.open { border-color: var(--azure-primary); box-shadow: var(--shadow-md); }
+        .faq-card.open .faq-body { max-height: 300px; padding-bottom: 30px; }
+        .faq-card.open .bi-plus { transform: rotate(45deg); }
+        .faq-header i { transition: transform 0.3s; color: var(--azure-primary); font-size: 1.4rem; }
 
-        /* Responsive Fixes */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
+        /* --- Infrastructure Grid --- */
+        .infra-grid-item {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #f1f5f9;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .infra-grid-item:hover { transform: scale(1.05); border-color: var(--azure-primary); }
+
+        footer { background: #020617; padding: 100px 0 30px; color: #94a3b8; }
+
+        @media (max-width: 991px) {
+            .feature-box { flex-direction: column; }
+            .feature-sidebar { width: 100%; display: flex; overflow-x: auto; padding: 10px 0; border-right: none; border-bottom: 1px solid #e2e8f0; }
+            .feature-link { white-space: nowrap; padding: 15px 25px; box-shadow: none !important; border-bottom: 3px solid transparent; }
+            .feature-link.active { border-bottom-color: var(--azure-primary); }
+            .feature-content-area { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
-    <div class="container">
-        <a class="navbar-brand fw-800" href="#">
-            <span id="brand-logo" style="color: var(--active-primary)">REALESTATE</span><span class="text-dark">X</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item mx-2"><a class="nav-link fw-600" href="#features" id="nav-item-1">Advanced CRM</a></li>
-                <li class="nav-item mx-2"><a class="nav-link fw-600" href="#compliance" id="nav-item-2">ZATCA Status</a></li>
-                <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
-                    <div class="region-toggle">
-                        <button class="btn-region active" onclick="switchRegion('gcc')">GCC</button>
-                        <button class="btn-region" onclick="switchRegion('asia')">Asia</button>
-                        <button class="btn-region" onclick="switchRegion('global')">Global</button>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-white py-3 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-indigo-deep" href="#">
+                RealEstate<span class="text-azure-primary">X</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navR">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navR">
+                <ul class="navbar-nav ms-auto align-items-center fw-semibold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#agents">AI Agents</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#features">Core Features</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#security">Security</a></li>
+                    <li class="nav-item ms-lg-4"><a href="tel:+923344071716" class="btn btn-outline-glass btn-sm">Call Now</a></li>
+                    <li class="nav-item ms-lg-2"><button class="btn btn-premium btn-sm">Book Demo</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="section-tag">Next-Gen Real Estate ERP</span>
+                    <h1 class="display-4 fw-bold mb-4">The Most Advanced <span class="text-gradient">Real Estate Society Software</span> in Pakistan & Asia</h1>
+                    <p class="lead text-muted mb-5">Built with Agentic AI to automate Files, Installments, Balloting, Dealers, and Accounting in One Secure Cloud Platform.</p>
+
+                    <ul class="pain-list mb-5">
+                        <li><i class="bi bi-patch-exclamation-fill"></i> Losing revenue due to manual installment tracking?</li>
+                        <li><i class="bi bi-patch-exclamation-fill"></i> Dealing with dealer commission disputes?</li>
+                        <li><i class="bi bi-patch-exclamation-fill"></i> Struggling with messy Excel file records?</li>
+                        <li><i class="bi bi-patch-exclamation-fill"></i> Customers constantly calling for ledger updates?</li>
+                    </ul>
+
+                    <div class="d-flex flex-wrap gap-3">
+                        <button class="btn btn-premium btn-lg">Book AI Demo Now</button>
+                        <a href="tel:+923344071716" class="btn btn-outline-glass btn-lg">Call: +923344071716</a>
                     </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero-section">
-    <div class="container text-center">
-        <span class="badge-vision" id="hero-badge">KSA Vision 2030 | UAE 2050 Aligned</span>
-        <h1 class="hero-title mx-auto" style="max-width: 900px;" id="hero-title">
-            The Sovereign AI Operating System for <span style="color: var(--active-primary)">Giga-Project</span> Infrastructure.
-        </h1>
-        <p class="lead text-muted mb-5 mx-auto" style="max-width: 700px;" id="hero-sub">
-            Consolidate your entire real estate lifecycle—from procurement and ZATCA compliance to asset management—into a single, secure, AI-powered source of truth.
-        </p>
-        <div class="d-flex justify-content-center gap-3">
-            <button class="cta-primary" id="main-cta">Request Sovereign Briefing</button>
-            <button class="btn btn-outline-dark px-4 py-3 fw-600">Explore Modules</button>
-        </div>
-
-        <!-- Placeholder for Visual Mockup -->
-        <div class="mt-5 pt-4 rounded-4 shadow-lg bg-light" style="height: 400px; display: flex; align-items: center; justify-content: center; border: 1px solid #e2e8f0;">
-            <div class="text-center text-muted">
-                <i data-lucide="layout" size="48" class="mb-3"></i>
-                <p>Interactive 3D Dashboard Mockup Placeholder</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- AI Agents Section -->
-<section class="py-5 bg-white">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-800 h1">Meet Your AI Workforce</h2>
-            <p class="text-muted">8 specialized agents working 24/7 to eliminate administrative friction.</p>
-        </div>
-        <div class="row g-4" id="agent-grid">
-            <!-- Dynamic Agents Loaded via JS -->
-        </div>
-    </div>
-</section>
-
-<!-- Feature Explorer -->
-<section class="py-5 bg-light" id="features">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-5">
-                <h2 class="fw-800 mb-4">Enterprise Excellence</h2>
-                <div id="feature-list">
-                    <!-- Dynamic Features -->
                 </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="bg-white p-4 rounded-4 shadow-sm border" style="min-height: 400px;">
-                    <div id="feature-display" class="text-center py-5">
-                        <i data-lucide="shield-check" size="64" class="mb-4 text-muted"></i>
-                        <h4 id="feature-display-title">Select a module to explore</h4>
-                        <p class="text-muted" id="feature-display-desc">Real-time data visualization and deep-drill analytics.</p>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="mockup-container">
+                        <div class="float-badge" style="top: 10%; right: 10%;">Auto Installments</div>
+                        <div class="float-badge" style="bottom: 20%; left: -5%;">Balloting Engine</div>
+                        <div class="float-badge" style="top: 45%; left: -10%;">AI Command Mode</div>
+                        <img src="https://via.placeholder.com/800x600/f8fafc/1e1b4b?text=RealEstateX+AI+Center" class="img-fluid rounded-5" alt="Dashboard Preview">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Stats Counters -->
-<section class="py-5 border-top border-bottom">
-    <div class="container">
-        <div class="row" id="stats-row">
-            <!-- Dynamic Stats -->
-        </div>
-    </div>
-</section>
-
-<!-- Compliance Section -->
-<section class="py-5 bg-white text-center" id="compliance">
-    <div class="container">
-        <h2 class="fw-800 mb-4" id="compliance-title">Localized Data Sovereignty</h2>
-        <p class="text-muted mx-auto mb-5" style="max-width: 800px;" id="compliance-desc">
-            Hosted locally on Saudi/UAE cloud infrastructure. Fully compliant with CITC regulations and SOC2 Type II standards.
-        </p>
-        <div class="d-flex justify-content-center gap-4 flex-wrap">
-            <div class="p-3 border rounded shadow-sm">ISO 27001 Certified</div>
-            <div class="p-3 border rounded shadow-sm">ZATCA Phase 2 Certified</div>
-            <div class="p-3 border rounded shadow-sm">GDPR / CITC Compliant</div>
-        </div>
-    </div>
-</section>
-
-<!-- Final CTA -->
-<section class="py-5 text-center bg-dark text-white">
-    <div class="container py-4">
-        <h2 class="fw-800 h1 mb-4" id="final-cta-title">Secure Your Asset Pipeline Today.</h2>
-        <button class="cta-primary px-5 py-3 fs-5" id="final-cta-btn">Book Enterprise Demo</button>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-4">
-                <h4 class="text-white fw-800 mb-4">REALESTATEX</h4>
-                <p id="footer-desc">Redefining real estate management through specialized AI agents and localized regulatory excellence.</p>
+    <!-- AI AGENTS -->
+    <section id="agents" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="section-tag">Operational AI</span>
+                <h2 class="h1 fw-bold">Meet Your <span class="text-gradient">AI Workforce</span></h2>
+                <p class="text-muted mx-auto" style="max-width: 650px;">RealEstateX replaces manual effort with intelligent AI agents that understand your society data like a human expert.</p>
             </div>
-            <div class="col-lg-4 text-lg-center">
-                <h6 class="text-white mb-4">Regional Hubs</h6>
-                <p id="footer-hubs">Riyadh (KAFD) | Dubai (DIFC)</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="ai-card">
+                        <div class="ai-icon-wrapper"><i class="bi bi-cash-stack"></i></div>
+                        <h4 class="fw-bold">Recovery Agent</h4>
+                        <p class="small text-muted">Automates overdue tracking and multi-channel reminders.</p>
+                        <div class="ai-command">"Show overdue files in Block B above 3 months."</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="ai-card">
+                        <div class="ai-icon-wrapper"><i class="bi bi-people-fill"></i></div>
+                        <h4 class="fw-bold">Dealer Agent</h4>
+                        <p class="small text-muted">Calculates complex tiered rebates and payout schedules.</p>
+                        <div class="ai-command">"Calculate March commission for Platinum dealers."</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="ai-card">
+                        <div class="ai-icon-wrapper"><i class="bi bi-boxes"></i></div>
+                        <h4 class="fw-bold">Balloting Agent</h4>
+                        <p class="small text-muted">Handles provable digital plot allocations and letters.</p>
+                        <div class="ai-command">"Ballot 50% paid 10 Marla files in Phase 2."</div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="ai-card">
+                        <div class="ai-icon-wrapper"><i class="bi bi-pie-chart-fill"></i></div>
+                        <h4 class="fw-bold">Report Agent</h4>
+                        <p class="small text-muted">Instant revenue summaries and possession readiness lists.</p>
+                        <div class="ai-command">"Generate cashflow summary for management."</div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4 text-lg-end">
-                <h6 class="text-white mb-4">Security</h6>
-                <p>SOC2 Type II | AML Verified<br>SECP/DLD Integrated</p>
+            <div class="text-center mt-5">
+                <button class="btn btn-premium px-5">Activate AI Mode</button>
             </div>
         </div>
-        <hr class="my-5 border-secondary">
-        <div class="d-flex justify-content-between flex-wrap">
-            <p>&copy; 2025 Hashverx AI-RMS. All rights reserved.</p>
-            <div class="d-flex gap-3">
-                <a href="#" class="text-muted text-decoration-none">Terms</a>
-                <a href="#" class="text-muted text-decoration-none">Privacy</a>
+    </section>
+
+    <!-- STRIP -->
+    <section class="py-5" style="background: var(--grad-premium);">
+        <div class="container text-center text-white py-4">
+            <h2 class="fw-bold mb-3">This Is Not Just Software. This Is an AI-Powered Operating System.</h2>
+            <p class="opacity-75 lead mb-5">Replace slow manual processes with the speed of intelligent automation.</p>
+            <button class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-primary">See AI in Action</button>
+        </div>
+    </section>
+
+    <!-- CORE FEATURES -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="h1 fw-bold">The Complete <span class="text-gradient">Society Engine</span></h2>
+                <p class="text-muted">A full-lifecycle ERP designed for the high-stakes property market.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="feature-sidebar">
+                    <div class="feature-link active" data-target="crm">CRM & Leads <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="member">Member & File Creation <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="install">Installment Logic <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="inventory">Inventory & Units <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="ballot">Balloting Engine <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="noc">NOC & Transfers <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="dealer">Dealer Network <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="accounting">Project Accounting <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="auction">Auctions <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="portal">Member Portal <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="hrms">HRMS & Payroll <i class="bi bi-chevron-right"></i></div>
+                    <div class="feature-link" data-target="reports">Live Dashboards <i class="bi bi-chevron-right"></i></div>
+                </div>
+
+                <div class="feature-content-area" id="featureDisplay">
+                    <!-- Default dynamic content -->
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-4">
+                            <img src="https://via.placeholder.com/500x350/eff6ff/2563eb?text=CRM+Leads+Dashboard" class="img-fluid rounded-4 shadow" alt="Feature">
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 class="fw-bold mb-3 text-gradient">CRM & Lead Management</h3>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2 fw-medium"><i class="bi bi-check2-circle text-azure-primary me-2"></i> Track walk-in, digital & dealer leads</li>
+                                <li class="mb-2 fw-medium"><i class="bi bi-check2-circle text-azure-primary me-2"></i> Convert leads to members in 1 click</li>
+                                <li class="mb-2 fw-medium"><i class="bi bi-check2-circle text-azure-primary me-2"></i> Automated follow-up reminders</li>
+                            </ul>
+                            <p class="text-muted">RealEstateX provides a powerful real estate CRM built for Asian property markets. Track every inquiry and convert prospects into file holders with ease.</p>
+                            <div class="mt-4 pt-4 border-top">
+                                <span class="badge bg-primary bg-opacity-10 text-primary">real estate management system</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script>
-    const content = {
-        gcc: {
-            primary: '#d4af37',
-            secondary: '#064e3b',
-            badge: 'KSA Vision 2030 | UAE 2050 Aligned',
-            title: 'The Sovereign AI Operating System for <span style="color: #d4af37">Giga-Project</span> Infrastructure.',
-            sub: 'Consolidate your entire real estate lifecycle—from procurement and ZATCA compliance to asset management—into a single, secure source of truth.',
-            nav: ['Advanced CRM', 'ZATCA Status', 'Multi-Entity ERP'],
-            cta: 'Request Sovereign Briefing',
-            agents: [
-                { title: 'ZATCA Phase 2 Agent', desc: 'Auto-generates cryptographic e-invoices for KSA.', icon: 'file-text' },
-                { title: 'Inventory Procurement', desc: 'Automates supply chain for mega-project construction.', icon: 'truck' },
-                { title: 'Mollak Board Agent', desc: 'Manages community voting and service charge transparency.', icon: 'users' },
-                { title: 'DLD Liaison Bot', desc: 'Automates ownership transfers with Dubai Land Dept.', icon: 'building' },
-                { title: 'Enterprise Resource AI', desc: 'Real-time resource allocation for development teams.', icon: 'cpu' },
-                { title: 'Bilingual Concierge', desc: '24/7 Arabic/English resident support agent.', icon: 'message-square' },
-                { title: 'VAT/Tax Strategist', desc: 'Handles GCC-wide tax filing and reconciliation.', icon: 'pie-chart' },
-                { title: 'Luxury Asset AI', desc: 'Predictive maintenance for skyscraper infrastructure.', icon: 'zap' }
-            ],
-            features: [
-                { title: 'Giga-Project Inventory', desc: 'Interactive floor plans for 100+ story towers.' },
-                { title: 'Advanced Asset Accounting', desc: 'Real-time P&L and Balance Sheet per asset.' },
-                { title: 'Resident Super-App', desc: 'Integrated payment and amenity booking.' }
-            ],
-            stats: [
-                { val: '45+', label: 'Tier-1 Skyscrapers Managed' },
-                { val: '$120B+', label: 'Assets Under Management' },
-                { val: '12', label: 'Gov Nodes Integrated' }
-            ],
-            compliance: { title: 'Data Sovereignty & CITC', desc: 'Local hosting on Saudi/UAE cloud. SOC2 Type II. Localized for CITC (KSA) regulations.' },
-            hubs: 'Riyadh (KAFD) | Dubai (DIFC)'
-        },
-        asia: {
-            primary: '#1e3a8a',
-            secondary: '#64748b',
-            badge: 'Anti-Fraud & Integrity Standard',
-            title: 'The Gold Standard for <span style="color: #1e3a8a">Housing Societies</span> & Private Schemes.',
-            sub: 'Eliminate file fraud, automate FBR tax compliance, and digitize your entire plot inventory with cryptographic balloting.',
-            nav: ['Dealer Portals', 'FBR/Tax Status', 'Balloting Ledger'],
-            cta: 'Digitize Your Society Inventory',
-            agents: [
-                { title: 'Ballot Integrity Bot', desc: 'Cryptographically secure plot allotment bot.', icon: 'check-circle' },
-                { title: 'FBR Tax 236 Bot', desc: 'Automates withholding tax (236K/236C) for every sale.', icon: 'landmark' },
-                { title: 'File Transfer AI', desc: 'Digitizes manual file movements with biometric verification.', icon: 'fingerprint' },
-                { title: 'Dealer Quota Manager', desc: 'Manages multi-tier broker inventory and commissions.', icon: 'trending-up' },
-                { title: 'Procurement AI', desc: 'Manages construction contracts for society development.', icon: 'hard-hat' },
-                { title: 'GIS Mapping Agent', desc: 'Real-time satellite view of block/plot availability.', icon: 'map' },
-                { title: 'Financial Reconciler', desc: 'Automated bank feed matching for installments.', icon: 'refresh-cw' },
-                { title: 'Fraud Watchdog', desc: 'Prevents double-allocation of plot files.', icon: 'shield-alert' }
-            ],
-            features: [
-                { title: 'The Master Ledger', desc: 'Visualizing the entire file-to-plot lifecycle.' },
-                { title: 'Dealer Portal', desc: 'Real-time inventory trading for registered brokers.' },
-                { title: 'Collection Dashboard', desc: 'Tracking monthly installment health.' }
-            ],
-            stats: [
-                { val: '2.4M', label: 'Plots Digitized' },
-                { val: '150+', label: 'Housing Societies Active' },
-                { val: '$12B+', label: 'Monthly Transaction Volume' }
-            ],
-            compliance: { title: 'Regulatory Integrity', desc: 'LDA/PDA/KDA Bylaws integrated. SECP/FBR compliant reporting and Anti-Fraud protocols.' },
-            hubs: 'Lahore | Karachi | Islamabad | Dhaka'
-        },
-        global: {
-            primary: '#0d9488',
-            secondary: '#334155',
-            badge: 'IFRS & Institutional Grade',
-            title: 'Institutional <span style="color: #0d9488">REIT & Portfolio</span> OS with ESG Intelligence.',
-            sub: 'Manage multi-jurisdiction assets with AI-driven yield optimization, automated auditing, and global ESG compliance tracking.',
-            nav: ['ESG Metrics', 'Global Treasury', 'Portfolio Analytics'],
-            cta: 'Start Enterprise Trial',
-            agents: [
-                { title: 'IFRS/GAAP Auditor', desc: 'Multi-jurisdiction financial reporting bot.', icon: 'clipboard-list' },
-                { title: 'KYC/AML Global', desc: 'International sanctions screening for investors.', icon: 'user-check' },
-                { title: 'ESG Tracker', desc: 'Monitoring carbon footprint and energy efficiency.', icon: 'leaf' },
-                { title: 'Treasury Bot', desc: 'Managing multi-currency cash flows and hedging.', icon: 'globe' },
-                { title: 'Yield Optimizer', desc: 'AI-driven rent-roll analysis to maximize IRR.', icon: 'bar-chart-4' },
-                { title: 'Consolidation Agent', desc: 'Automated inter-company eliminations.', icon: 'layers' },
-                { title: 'IoT Maintenance', desc: 'Predictive asset upkeep for global portfolios.', icon: 'activity' },
-                { title: 'Lease Abstractor', desc: 'AI extracts key data points from 100-page leases.', icon: 'book-open' }
-            ],
-            features: [
-                { title: 'Global Portfolio Map', desc: 'Real-time yield heatmaps across continents.' },
-                { title: 'ESG Dashboard', desc: 'Reporting on "Green Building" compliance scores.' },
-                { title: 'Asset Health', desc: 'Drill-down into specific infrastructure status.' }
-            ],
-            stats: [
-                { val: '450+', label: 'Institutional Portfolios' },
-                { val: '$2.1T', label: 'Transaction Volume' },
-                { val: '25k+', label: 'Enterprise Users' }
-            ],
-            compliance: { title: 'Global Standards', desc: 'GDPR, SOC2 Type II, HIPAA, and IFRS-16. Optimized for international audit readiness.' },
-            hubs: 'London | New York | Singapore'
+    <!-- COMPETITION -->
+    <section class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">The <span class="text-gradient">RealEstateX</span> Edge</h2>
+            </div>
+            <div class="table-responsive table-premium">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>RealEstateX AI-OS</th>
+                            <th>Legacy Systems / Excel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold">Data Access</td>
+                            <td class="text-center text-success fw-bold">AI Command Search</td>
+                            <td class="text-center opacity-50">Manual Filtering</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Revenue Recovery</td>
+                            <td class="text-center text-success fw-bold">Automated Workflows</td>
+                            <td class="text-center opacity-50">Manual Phone Calls</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold">Security</td>
+                            <td class="text-center text-success fw-bold">End-to-End Encryption</td>
+                            <td class="text-center opacity-50">Local Excel Risks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section id="security" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 pe-lg-5">
+                    <span class="section-tag">CyberSecurity</span>
+                    <h2 class="h1 fw-bold mb-4">Enterprise-Grade Security & Deployment Flexibility</h2>
+                    <p class="text-muted mb-4">Built with military-grade standards to ensure your society data and financial records are protected 24/7/365.</p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="infra-grid-item">
+                                <i class="bi bi-cloud-check text-azure-primary fs-2"></i>
+                                <h6 class="fw-bold mt-2">AWS Hosting</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="infra-grid-item">
+                                <i class="bi bi-hdd-network text-azure-primary fs-2"></i>
+                                <h6 class="fw-bold mt-2">On-Premise</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5">
+                    <div class="bg-white p-5 rounded-5 shadow-lg border-start border-primary border-5">
+                        <h4 class="fw-bold mb-4">Infrastructure Specs</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-shield-fill-check text-success me-3"></i> AES-256 Database Encryption</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-shield-fill-check text-success me-3"></i> Role-Based Access Control</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-shield-fill-check text-success me-3"></i> 99.99% Server Uptime Guarantee</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-shield-fill-check text-success me-3"></i> Daily Automated Cloud Backups</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold h1">Common <span class="text-gradient">Questions</span></h2>
+            </div>
+            <div class="faq-wrapper">
+                <div class="faq-card">
+                    <button class="faq-header" onclick="toggleFaq(this)">
+                        How secure is our member data? <i class="bi bi-plus"></i>
+                    </button>
+                    <div class="faq-body">
+                        We use end-to-end encryption and offer deployment on both global cloud servers (AWS) and local on-premise servers for maximum data sovereignty and privacy.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <button class="faq-header" onclick="toggleFaq(this)">
+                        Can we migrate from existing Excel files? <i class="bi bi-plus"></i>
+                    </button>
+                    <div class="faq-body">
+                        Yes! Our team handles the entire data migration process. We verify your existing Excel records and port them into the RealEstateX ecosystem within days.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <button class="faq-header" onclick="toggleFaq(this)">
+                        Is there a mobile app for customers? <i class="bi bi-plus"></i>
+                    </button>
+                    <div class="faq-body">
+                        Absolutely. We provide a Member Portal and mobile-optimized interfaces where customers can view their ledgers and pay installments online.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-5" style="background: var(--navy-dark);">
+        <div class="container text-center py-5">
+            <h2 class="display-5 text-white fw-bold mb-4">Digitize Your Real Estate Society Today</h2>
+            <p class="text-white opacity-50 lead mb-5">Stop managing assets manually. Join the AI Revolution.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-4">
+                <button class="btn btn-premium btn-lg">Book AI Demo</button>
+                <a href="tel:+923344071716" class="btn btn-outline-light btn-lg">+923344071716</a>
+            </div>
+            <p class="mt-4 text-warning fw-bold">Limited onboarding slots for Q1 implementation.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h3 class="text-white fw-bold">RealEstate<span class="text-azure-primary">X</span></h3>
+                    <p class="mt-4">AI-Powered Society Management System. The full operating system for property developers in Asian markets.</p>
+                </div>
+                <div class="col-lg-2 ms-lg-auto">
+                    <h6 class="text-white fw-bold mb-4">Product</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">AI Agents</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Features</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Security</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="text-white fw-bold mb-4">Contact</h6>
+                    <p class="mb-2"><i class="bi bi-telephone text-azure-primary me-2"></i> +923344071716</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-azure-primary me-2"></i> Lahore, Pakistan</p>
+                </div>
+            </div>
+            <hr class="my-5 border-secondary">
+            <p class="small mb-0 text-center">© 2026 Hashverx Labs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        function toggleFaq(btn) {
+            const card = btn.parentElement;
+            const isOpen = card.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('open'));
+
+            // Toggle clicked
+            if (!isOpen) card.classList.add('open');
         }
-    };
 
-    function switchRegion(region) {
-        const data = content[region];
+        // Interactive Feature Data
+        const featureData = {
+            crm: {
+                title: "CRM & Lead Management",
+                bullets: ["Track walk-in, digital & dealer leads", "Convert lead → member → file in 1 click", "Automated follow-up reminders"],
+                text: "RealEstateX provides a powerful real estate CRM built for Asian property markets. Track every inquiry and convert prospects into confirmed file holders with structured workflows.",
+                keywords: "real estate management system"
+            },
+            member: {
+                title: "Member & File Creation",
+                bullets: ["Biometric verification", "Digital archive of CNIC/Passport", "Automatic file numbering"],
+                text: "Digitize every file registration. Ensure your records are tamper-proof and accessible 24/7 with our central repository.",
+                keywords: "File management system"
+            },
+            install: {
+                title: "Installment Plans & Auto Invoicing",
+                bullets: ["Auto-generating payment schedules", "SMS/WhatsApp invoice alerts", "Late fee fine engine"],
+                text: "Stop manual installment tracking. Our engine calculates dues, sends alerts, and updates ledgers instantly when a payment is confirmed.",
+                keywords: "installment tracking software"
+            },
+            inventory: {
+                title: "Units & Inventory Management",
+                bullets: ["Interactive map integration", "Real-time availability status", "Plot blocking & reservation"],
+                text: "Know exactly what is sold, what is available, and what is on hold with a bird's-eye map view of your inventory.",
+                keywords: "inventory management system"
+            },
+            ballot: {
+                title: "Balloting & Allotment Engine",
+                bullets: ["Provable digital balloting", "Randomized allocation logic", "Allotment letter generation"],
+                text: "Run massive balloting events with total transparency. Our engine handles the logic for thousands of plots in minutes.",
+                keywords: "balloting system software"
+            },
+            noc: {
+                title: "File Transfer & NOC System",
+                bullets: ["Workflow-based transfers", "NDC/NOC issuance portal", "Buyer verification"],
+                text: "Streamline transfers safely. RealEstateX ensures all dues are clear before a file ownership is transferred.",
+                keywords: "Property management system"
+            },
+            dealer: {
+                title: "Dealer Management",
+                bullets: ["Dealer hierarchy tracking", "Automatic commission rebates", "Dealer performance portals"],
+                text: "Automate payouts for your sales network. Dealers can track their own commissions and sales performance in real-time.",
+                keywords: "dealer commission management"
+            },
+            accounting: {
+                title: "Accounting & Partial Payments",
+                bullets: ["Double-entry bookkeeping", "Token payment support", "Expense tracking"],
+                text: "Full-scale accounting built for real estate. Track cashflow and generate profit/loss reports for your society projects.",
+                keywords: "real estate ERP Asia"
+            },
+            auction: {
+                title: "Auction Management",
+                bullets: ["Digital bidding interface", "Bidder qualification", "Highest bidder allocation"],
+                text: "Run digital auctions for premium or commercial units with total transparency and Provable results.",
+                keywords: "Property management system"
+            },
+            portal: {
+                title: "Customer & Dealer Portal",
+                bullets: ["Self-service ledgers", "Online payments", "Support ticket system"],
+                text: "Give your members peace of mind. A dedicated portal where customers can check their payment status anytime.",
+                keywords: "society management system"
+            },
+            hrms: {
+                title: "HRMS & Payroll",
+                bullets: ["Attendance logs", "Salary & Bonus calculation", "Staff permissions"],
+                text: "Manage your internal team and sales agents with an integrated HRMS module for real estate operations.",
+                keywords: "HRMS for property"
+            },
+            reports: {
+                title: "Dashboards & Critical Reports",
+                bullets: ["Revenue leakage alerts", "Daily collection heatmaps", "Executive summaries"],
+                text: "Get a 360-degree view of your society's operational health with 100+ critical reporting templates.",
+                keywords: "real estate ERP Asia"
+            }
+        };
 
-        // Update CSS Variables
-        document.documentElement.style.setProperty('--active-primary', data.primary);
-        document.documentElement.style.setProperty('--active-secondary', data.secondary);
+        // Navigation for Features
+        document.querySelectorAll('.feature-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const target = this.dataset.target;
+                const data = featureData[target];
 
-        // Update Nav & Active Buttons
-        document.querySelectorAll('.btn-region').forEach(btn => {
-            btn.classList.remove('active');
-            if(btn.innerText.toLowerCase() === region) btn.classList.add('active');
+                // Active State
+                document.querySelectorAll('.feature-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                // Update Display
+                const display = document.getElementById('featureDisplay');
+                display.style.opacity = '0';
+
+                setTimeout(() => {
+                    display.innerHTML = `
+                        <div class="row align-items-center animate__animated animate__fadeIn">
+                            <div class="col-lg-6 mb-4">
+                                <img src="https://via.placeholder.com/500x350/eff6ff/2563eb?text=${data.title.replace(/ /g, '+')}" class="img-fluid rounded-4 shadow" alt="Feature">
+                            </div>
+                            <div class="col-lg-6">
+                                <h3 class="fw-bold mb-3 text-gradient">${data.title}</h3>
+                                <ul class="list-unstyled mb-4">
+                                    ${data.bullets.map(b => `<li class="mb-2 fw-medium"><i class="bi bi-check2-circle text-azure-primary me-2"></i> ${b}</li>`).join('')}
+                                </ul>
+                                <p class="text-muted">${data.text}</p>
+                                <div class="mt-4 pt-4 border-top">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary">${data.keywords}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    display.style.opacity = '1';
+                }, 200);
+            });
         });
-
-        // Update Text
-        document.getElementById('hero-badge').innerText = data.badge;
-        document.getElementById('hero-title').innerHTML = data.title;
-        document.getElementById('hero-sub').innerText = data.sub;
-        document.getElementById('main-cta').innerText = data.cta;
-        document.getElementById('final-cta-btn').innerText = data.cta;
-        document.getElementById('nav-item-1').innerText = data.nav[0];
-        document.getElementById('nav-item-2').innerText = data.nav[1];
-        document.getElementById('compliance-title').innerText = data.compliance.title;
-        document.getElementById('compliance-desc').innerText = data.compliance.desc;
-        document.getElementById('footer-hubs').innerText = data.hubs;
-
-        // Render Agents
-        const grid = document.getElementById('agent-grid');
-        grid.innerHTML = data.agents.map(a => `
-            <div class="col-md-6 col-lg-3">
-                <div class="agent-card">
-                    <div class="agent-icon"><i data-lucide="${a.icon}"></i></div>
-                    <h5 class="fw-700">${a.title}</h5>
-                    <p class="text-muted small mb-0">${a.desc}</p>
-                </div>
-            </div>
-        `).join('');
-
-        // Render Features
-        const featList = document.getElementById('feature-list');
-        featList.innerHTML = data.features.map((f, i) => `
-            <div class="feature-menu-item ${i===0?'active':''}" onclick="setActiveFeat(this, '${f.title}', '${f.desc}')">
-                <h6 class="fw-700 mb-1">${f.title}</h6>
-                <p class="text-muted small mb-0">${f.desc}</p>
-            </div>
-        `).join('');
-
-        // Render Stats
-        const statsRow = document.getElementById('stats-row');
-        statsRow.innerHTML = data.stats.map(s => `
-            <div class="col-md-4">
-                <div class="counter-box">
-                    <span class="counter-val">${s.val}</span>
-                    <span class="text-muted fw-600">${s.label}</span>
-                </div>
-            </div>
-        `).join('');
-
-        lucide.createIcons();
-    }
-
-    function setActiveFeat(el, title, desc) {
-        document.querySelectorAll('.feature-menu-item').forEach(i => i.classList.remove('active'));
-        el.classList.add('active');
-        document.getElementById('feature-display-title').innerText = title;
-        document.getElementById('feature-display-desc').innerText = desc;
-    }
-
-    // Initialize on GCC
-    window.onload = () => switchRegion('gcc');
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
 </body>
 </html>
